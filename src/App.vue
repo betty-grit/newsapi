@@ -1,9 +1,16 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <img class="logo" src="@/assets/Group10103.svg" />
+    <router-link to="/"></router-link>
+    <router-link to="/Global">Global</router-link>
+    <router-link to="/Business">Business</router-link>
+    <router-link to="/Health">Health</router-link>
+    <router-link to="/Technology">Technology</router-link>
+    <router-link to="/Headline">Headline</router-link>
+    <a class="menu" href="">Menu</a>
   </nav>
-  <router-view/>
+
+  <router-view />
 </template>
 
 <style>
@@ -14,17 +21,32 @@
   text-align: center;
   color: #2c3e50;
 }
-
+.logo {
+  width: 30px;
+  height: 30px;
+}
 nav {
   padding: 30px;
+  background-color: white;
 }
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: black;
+  padding: 30px;
+  text-decoration: none;
 }
 
-nav a.router-link-exact-active {
+/* .router-link {
+  justify-content: space-between;
+} */
+
+/* nav a.router-link-exact-active {
   color: #42b983;
+} */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 </style>
