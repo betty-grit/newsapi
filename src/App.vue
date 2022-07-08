@@ -1,15 +1,19 @@
 <template>
-  <nav>
+  <div class="navbar">
     <img class="logo" src="@/assets/Group10103.svg" />
-    <router-link to="/"></router-link>
-    <router-link to="/Global">Global</router-link>
-    <router-link to="/Business">Business</router-link>
-    <router-link to="/Health">Health</router-link>
-    <router-link to="/Technology">Technology</router-link>
-    <router-link to="/Headline">Headline</router-link>
-    <a class="menu" href="">Menu</a>
-  </nav>
-
+    <nav>
+      <router-link to="/"></router-link>
+      <router-link to="/Global">Global</router-link>
+      <router-link to="/Business">Business</router-link>
+      <router-link to="/Health">Health</router-link>
+      <router-link to="/Technology">Technology</router-link>
+      <!-- <router-link to="/Headline">Headline</router-link> -->
+    </nav>
+    <div class="mainmenu">
+      <img class="fontss" src="@/assets/Group(8).svg" alt="" />
+      <a class="menu" href="">Menu</a>
+    </div>
+  </div>
   <router-view />
 </template>
 
@@ -21,12 +25,34 @@
   text-align: center;
   color: #2c3e50;
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.mainmenu {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
 .logo {
   width: 30px;
   height: 30px;
+  margin-left: 20px;
+}
+.menu {
+  text-decoration: none;
+  color: black;
+}
+.fontss {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
 }
 nav {
-  padding: 30px;
+  padding: 0px;
+
   background-color: white;
 }
 
@@ -48,5 +74,6 @@ nav a {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Public Sans", sans-serif;
 }
 </style>

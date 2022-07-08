@@ -1,31 +1,36 @@
 <template>
-  <div v-for="con in techNews.articles" :key="con">
-    <img :src="con.urlToImage" alt="" />
-    <p>{{ con.description }}</p>
-  </div>
+  <HeadlineNav :heading="technologyHeadline" />
+  <card :allnews="technology" />
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import { mapActions, mapGetters } from "vuex";
-
+import Card from "@/components/Card.vue";
+import HeadlineNav from "@/components/HeadlineNav.vue";
 export default {
   name: "TechnologyView",
-  // components: {
-  //   HelloWorld
-  // }
+  components: { Card, HeadlineNav },
+
   async created() {
-    await this.getAllTechNews();
+    await this.getAllTechnologyNews();
   },
+
   computed: {
     ...mapGetters({
-      techNews: "getTechNews",
+      technologyNews: "getTechnologyNews",
     }),
+    technologyHeadline() {
+      return this.technologyNews.slice(0, 1);
+    },
+    technology() {
+      return this.technologyNews.slice(1, 10);
+    },
   },
   methods: {
     ...mapActions({
-      getAllTechNews: "getAllTechNews",
+      getAllTechnologyNews: "getAllTechnologyNews",
     }),
   },
 };

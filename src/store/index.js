@@ -4,14 +4,14 @@ import axios from "axios";
 const store = createStore({
   state: {
     globalNews: [],
-    techNews: [],
+    technologyNews: [],
     businessNews: [],
     healthNews: [],
     headlineNews: [],
   },
   getters: {
     getGlobalNews: (state) => state.globalNews,
-    getTechNews: (state) => state.techNews,
+    getTechnologyNews: (state) => state.technologyNews,
     getBusinessNews: (state) => state.businessNews,
     getHealthNews: (state) => state.healthNews,
     getHeadlineNews: (state) => state.headlineNews,
@@ -20,8 +20,8 @@ const store = createStore({
     SET_GLOBALNEWS(state, payload) {
       state.globalNews = payload;
     },
-    SET_TECHNEWS(state, payload) {
-      state.techNews = payload;
+    SET_TECHNOLOGYNEWS(state, payload) {
+      state.technologyNews = payload;
     },
     SET_BUSINESSNEWS(state, payload) {
       state.businessNews = payload;
@@ -46,12 +46,12 @@ const store = createStore({
         console.log(error);
       }
     },
-    async getAllTechNews({ commit }) {
+    async getAllTechnologyNews({ commit }) {
       try {
         const response = await axios.get(
           "https://newsapi.org/v2/top-headlines?category=technology&apiKey=28509d2d8bb942568a81dd838fca36ad"
         );
-        commit("SET_TECHNEWS", response.data.articles);
+        commit("SET_TECHNOLOGYNEWS", response.data.articles);
         console.log(response);
         return response;
       } catch (error) {

@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import SingleView from "../views/SingleView.vue";
 
 const routes = [
   {
@@ -52,6 +53,10 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/HeadlineView.vue"),
   },
+
+  {
+    path:"/Single"
+  }
 ];
 
 const router = createRouter({
